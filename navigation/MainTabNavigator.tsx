@@ -22,11 +22,10 @@ const TabBarIcon = (props: { name: React.ComponentProps<typeof Ionicons>['name']
     return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
-const Tab = createBottomTabNavigator<BottomTabParamList>();
-    //
-    // createMaterialTopTabNavigator<BottomTabParamList>()
+// const Tab = createBottomTabNavigator<BottomTabParamList>();
+const Tab = createMaterialTopTabNavigator<BottomTabParamList>()
 
-export const MainTabNavigator = () => {
+const MainTabNavigator = () => {
   const colorScheme = useColorScheme();
 
   return (
@@ -56,4 +55,4 @@ export const MainTabNavigator = () => {
   );
 }
 
-
+export default MainTabNavigator

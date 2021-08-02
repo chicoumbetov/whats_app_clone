@@ -5,6 +5,7 @@
 
 export type RootStackParamList = {
   Root: undefined;
+  WhatsApp: undefined;
   NotFound: undefined;
 };
 

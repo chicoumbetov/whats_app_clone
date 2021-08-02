@@ -14,7 +14,7 @@ import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from "../constants/Colors";
 import {MaterialCommunityIcons, Octicons} from "@expo/vector-icons";
-import {MainTabNavigator} from "./MainTabNavigator";
+import MainTabNavigator from "./MainTabNavigator";
 
 export const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
   return (
@@ -42,7 +42,7 @@ const RootNavigator = () => {
             fontWeight: "bold"
         }
     }}>
-      <Stack.Screen name="Root" component={MainTabNavigator}
+      <Stack.Screen name="WhatsApp" component={MainTabNavigator}
       options={{
           title: "WhatsApp",
           headerRight: () => (
