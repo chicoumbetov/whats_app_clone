@@ -32,12 +32,12 @@ const MainTabNavigator = () => {
     <Tab.Navigator
       initialRouteName="Chats"
       tabBarOptions={{
-          activeTintColor: Colors[colorScheme].tint,
+          activeTintColor: Colors[colorScheme].background,
           style: {
-              backgroundColor: Colors[colorScheme].background
+              backgroundColor: Colors[colorScheme].tint
           },
           indicatorStyle: {
-            backgroundColor: Colors[colorScheme].tint,
+            backgroundColor: Colors[colorScheme].background,
             height: 4,
           },
           labelStyle: {

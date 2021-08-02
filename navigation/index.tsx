@@ -20,7 +20,7 @@ export const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) =>
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      theme={colorScheme === 'dark' ? DefaultTheme : DarkTheme }>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -36,9 +36,9 @@ const RootNavigator = () => {
         headerStyle: {
           shadowOpacity: 0,
           elevation: 0,
-            backgroundColor: Colors.light.background
+            backgroundColor: Colors.light.tint
         },
-        headerTintColor: Colors.light.tint,
+        headerTintColor: Colors.light.background,
         headerTitleAlign: "left",
         headerTitleStyle: {
             fontWeight: "bold"
