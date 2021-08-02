@@ -10,8 +10,10 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  Chat: undefined;
+  Camera: undefined;
+  Chats: undefined;
   Status: undefined;
+  Calls: undefined;
 };
 
 export type ChatParamList = {

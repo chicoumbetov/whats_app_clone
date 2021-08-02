@@ -34,6 +34,8 @@ const RootNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
         headerStyle: {
+          shadowOpacity: 0,
+          elevation: 0,
             backgroundColor: Colors.light.background
         },
         headerTintColor: Colors.light.tint,

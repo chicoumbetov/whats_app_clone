@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
 
-import { Ionicons } from '@expo/vector-icons';
+import { Fontisto, Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import * as React from 'react';
@@ -30,26 +30,40 @@ const MainTabNavigator = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="Chat"
+      initialRouteName="Chats"
       tabBarOptions={{
           activeTintColor: Colors[colorScheme].tint,
           style: {
               backgroundColor: Colors[colorScheme].background
           },
+          indicatorStyle: {
+            backgroundColor: Colors[colorScheme].tint,
+            height: 4,
+          },
+          labelStyle: {
+            fontWeight: 'bold'
+          },
+          showIcon: true,
       }}>
-      <Tab.Screen
-        name="Chat"
+        <Tab.Screen
+        name="Camera"
         component={ChatNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <Fontisto name="camera" size={20} color={color} />,
+          tabBarLabel: () => null
         }}
+      />
+      <Tab.Screen
+        name="Chats"
+        component={ChatNavigator}
       />
       <Tab.Screen
         name="Status"
         component={StatusNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
+      />
+      <Tab.Screen
+        name="Calls"
+        component={ChatNavigator}
       />
     </Tab.Navigator>
   );
