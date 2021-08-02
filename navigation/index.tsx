@@ -10,12 +10,13 @@ import {ColorSchemeName, View} from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from "../constants/Colors";
 import {MaterialCommunityIcons, Octicons} from "@expo/vector-icons";
+import {MainTabNavigator} from "./MainTabNavigator";
 
-export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+export const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
@@ -29,7 +30,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 // Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<RootStackParamList>();
 
-function RootNavigator() {
+const RootNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
         headerStyle: {
@@ -41,7 +42,7 @@ function RootNavigator() {
             fontWeight: "bold"
         }
     }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator}
+      <Stack.Screen name="Root" component={MainTabNavigator}
       options={{
           title: "WhatsApp",
           headerRight: () => (
