@@ -31,7 +31,8 @@ export const Navigation = () => {
     <Stack.Navigator >
       <Stack.Screen name="WhatsApp" component={MainTabNavigator}
       options={{
-          title: "WhatsApp",
+          // title: "WhatsApp",
+          headerTitle: 'WhatsApp',
           headerStyle: {
               shadowOpacity: 0,
               elevation: 0,
@@ -53,7 +54,9 @@ export const Navigation = () => {
             name="ChatRoomScreen"
             component={ChatRoomScreen}
             options={ ({route}) => ({
-                title: route.params.name,
+                headerBackTitle: route.params.name,
+                headerTitle: false,
+                headerTintColor: Colors.light.background,
                 headerRight: () => (
                     <View
                         style={{
