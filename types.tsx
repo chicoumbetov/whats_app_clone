@@ -6,6 +6,7 @@
 export type RootStackParamList = {
   Root: undefined;
   WhatsApp: undefined;
+  ChatRoomScreen: undefined;
   NotFound: undefined;
 };
 
@@ -25,19 +26,23 @@ export type StatusParamList = {
 };
 
 export type User = {
-  id: String;
-  name: String;
-  imageUri: String;
+  id: string;
+  name: string;
+  imageUri: string;
 }
 
 export type Message = {
-  id: String;
-  content: String;
-  createdAt: String;
+  id: string;
+  user: {
+    id: string;
+    name: string;
+  };
+  content: string;
+  createdAt: string;
 }
 
 export type ChatRoom = {
-  id: String;
+  id: string;
   users: [User];
   lastMessage: Message;
 }

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react'
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import { ChatRoom } from '../../types';
 import styles from './style';
 import moment from 'moment'
@@ -13,21 +13,21 @@ const ChatListItem = (props: ChatListItemProps) => {
     const { chatRoom } = props;
     const navigation = useNavigation();
     const user = chatRoom.users[1];
-    
+
     const onClick = () => {
         //this is how we send to open specific user
-        navigation.navigate('ChatRoom', {
+        navigation.navigate('ChatRoomScreen', {
             id: chatRoom.id,
             name: user.name,
         });
         //console.warn( `Clicked on ${user.name}`)
     }
-    
+
     return(
-        <TouchableWithoutFeedback
-            onPress={onClick}
+        <TouchableOpacity
+            style={styles.container}
+            onPress={() => onClick()}
         >
-            <View style={styles.container}>
                 <View style={styles.leftContainer}>
                     <Image source={{ uri: user.imageUri }} style={styles.avatar} />
 
@@ -41,8 +41,7 @@ const ChatListItem = (props: ChatListItemProps) => {
                     {moment(chatRoom.lastMessage.createdAt).fromNow()};
                 </Text>
 
-            </View>
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
     )
 }
 

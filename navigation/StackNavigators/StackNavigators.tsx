@@ -11,10 +11,11 @@ const ChatStack = createStackNavigator<ChatParamList>();
 
 export const ChatNavigator = () => {
     return (
-        <ChatStack.Navigator>
+        <ChatStack.Navigator headerMode={"none"}>
             <ChatStack.Screen
                 name="ChatScreen"
                 component={ChatScreen}
+                options={{ headerTitle: false}}
             />
         </ChatStack.Navigator>
     );
@@ -28,6 +29,7 @@ export  const StatusNavigator = () => {
             <StatusStack.Screen
                 name="StatusScreen"
                 component={StatusScreen}
+                options={{ headerTitle: false}}
             />
         </StatusStack.Navigator>
     );

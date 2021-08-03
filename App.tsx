@@ -1,11 +1,14 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import {Navigation} from "./navigation";
+import LinkingConfiguration from "./navigation/LinkingConfiguration";
+import {DarkTheme, DefaultTheme, NavigationContainer} from "@react-navigation/native";
+
 
  const App = () => {
   const isLoadingComplete = useCachedResources();
@@ -15,12 +18,15 @@ import {Navigation} from "./navigation";
     return null;
   } else {
     return (
-      <React.Fragment>
         <SafeAreaProvider>
-            <Navigation colorScheme={colorScheme} />
-            <StatusBar />
+            <React.Fragment>
+                <NavigationContainer
+                    linking={LinkingConfiguration}
+                    theme={colorScheme === 'dark' ? DefaultTheme : DarkTheme }>
+                <Navigation />
+                </NavigationContainer>
+            </React.Fragment>
         </SafeAreaProvider>
-      </React.Fragment>
     );
   }
 }

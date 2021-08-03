@@ -6,7 +6,6 @@ export const StatusScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Status</Text>
-
     </View>
   );
 }
@@ -16,16 +15,8 @@ export const StatusScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
   },
 });
